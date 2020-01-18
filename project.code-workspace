@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "workbench.editor.labelFormat": "medium",
+    "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#276679"
+    },
+    "files.associations": {
+      "*.html": "django-html"
+    }
+  },
+  "launch": {
+    "configurations": [],
+    "compounds": [
+      {
+        "name": "Debug Frontend",
+        "configurations": ["Chrome: Frontend", "Django: RunServer"]
+      },
+      {
+        "name": "Debug Backend",
+        "configurations": ["Chrome: Backend", "Django: RunServer"]
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": []
+  },
+  "extensions": {
+    "recommendations": []
+  },
+  "folders": [
+    {
+      "name": "Frontend",
+      "path": "frontend"
+    },
+    {
+      "name": "Backend",
+      "path": "backend"
+    }
+  ]
+}

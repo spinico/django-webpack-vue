@@ -1,0 +1,132 @@
+// SPDX-License-Identifier: MIT
+
+@charset "utf-8";
+
+@import "breakpoints";
+@import "icons";
+@import "fonts";
+@import "stars";
+@import "switch";
+
+$banner: rgb(0, 162, 201);
+$gray: rgb(245, 245, 245);
+$green: rgb(52, 255, 154);
+
+$content_padding: 3% 10% 3% 10%;
+
+// Minimal reset style
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-y: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+a, a:hover {
+  text-decoration: none !important;
+}
+
+h1 {
+  color: $gray;
+  text-align: center;
+
+  &:hover {
+    color: $green;
+    cursor: pointer;
+  }
+}
+
+.banner {
+  background-color: $banner;
+  padding: 0;
+}
+
+.hero {
+  background: radial-gradient(ellipse at bottom, #0c1116 0%, #090a0f 100%);
+  position: relative;
+  padding: 15% 0 0 0;
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.content {
+  font-size: 1.2em;
+  padding: $content_padding;
+  text-align: justify;
+  flex: 1 0 auto;
+}
+
+.show {
+  transition: opacity 800ms;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.hide-navbar-background {
+  background: rgba(0, 0, 0, 0);
+  transition: background 400ms;
+}
+
+.show-navbar-background {
+  background: rgba(0, 0, 0, 0.9);
+  transition: background 400ms;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2px;
+  transition: 0.4s;
+}
+
+.navbar {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  transition: 0.4s;
+}
+
+.nav-link,
+.navbar-brand {
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .navbar-brand {
+  font-size: 1rem;
+  transition: 0.4s;
+}
+
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  color: yellow !important;
+}
+
+#logo {
+  width:48px;
+  height:48px;
+  margin: 3px 10px 3px 0;
+  background: url("../images/logo.svg");
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#lorem {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#theme-switch {
+  margin: 15px 0;
+}

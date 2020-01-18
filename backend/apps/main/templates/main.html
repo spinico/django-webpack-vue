@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<nav class="navbar navbar-expand-md fixed-top navbar-dark">
+  <div style="display:flex;justify-content:space-between;width:100%;">
+    <a href="#" class="navbar-brand" style="display:flex;align-items:center;">
+      <div id="logo"></div>
+      <span>{{ title }}</span>
+    </a>
+
+    <button class="navbar-toggler navbar" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse" id="menu">
+    <ul class="navbar-nav align-items-start ml-auto">
+      <li class="nav-item active">
+        <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+        <div class="dropdown-menu" aria-labelledby="products">
+          <a href="#" class="dropdown-item">Product 1</a>
+          <a href="#" class="dropdown-item">Product 2</a>
+          <a href="#" class="dropdown-item">Product 3</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" id="theme-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cogs"></i> Theme</a>
+        <ul class="dropdown-menu" style="padding-left:6px;">
+          <li><a href="#" class="change-theme-menu-item" rel="cerulean"><i class="fas fa-pen"></i> Cerulean</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="cosmo"><i class="fas fa-pen"></i> Cosmo</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="cyborg"><i class="fas fa-pen"></i> Cyborg</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="darkly"><i class="fas fa-pen"></i> Darkly</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="flatly"><i class="fas fa-pen"></i> Flatly</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="journal"><i class="fas fa-pen"></i> Journal</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="litera"><i class="fas fa-pen"></i> Litera</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="lumen"><i class="fas fa-pen"></i> Lumen</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="lux"><i class="fas fa-pen"></i> Lux</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="materia"><i class="fas fa-pen"></i> Materia</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="minty"><i class="fas fa-pen"></i> Minty</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="pulse"><i class="fas fa-pen"></i> Pulse</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="sandstone"><i class="fas fa-pen"></i> Sandstone</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="simplex"><i class="fas fa-pen"></i> Simplex</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="sketchy"><i class="fas fa-pen"></i> Sketchy</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="slate"><i class="fas fa-pen"></i> Slate</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="solar"><i class="fas fa-pen"></i> Solar</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="spacelab"><i class="fas fa-pen"></i> Spacelab</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="superhero"><i class="fas fa-pen"></i> Superhero</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="united"><i class="fas fa-pen"></i> United</a></li>
+          <li><a href="#" class="change-theme-menu-item" rel="yeti"><i class="fas fa-pen"></i> Yeti</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Documentation</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link disabled">About</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block hero %}
+  <div id="stars1"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  <div id="horizon">
+    <div class="glow"></div>
+  </div>
+  <div id="earth"></div>
+{% endblock %}
+
+{% block content %}
+<div style="margin: 0 0 20px 0;">
+  <h4><a href="#">Front-End</a></h4>
+  <div style="display:flex;flex-direction:column;width:300px;">
+    <a href="{% url 'frontend' %}" class="btn btn-info" role="button">Link to front-end (Vue.js) application</a>
+  </div>
+</div>
+<h4>
+  <a href="https://getbootstrap.com/">Bootstrap</a>
+</h4>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <a href="#" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+  <h4 class="alert-heading">Alert</h4>Example of a dismissible alert.
+</div>
+
+<div>
+  <h4>
+    <a href="https://fontawesome.com/icons">Font-Awesome Icons</a>
+    <span style="font-size: 1.5em; color: LimeGreen;">
+        <i class="fas fa-check fa-1x fa-fw"></i>
+    </span>
+  </h4>
+  <span style="font-size: 1em; color: Tomato;">
+    <i class="fas fa-cog fa-spin fa-2x fa-fw"></i>
+  </span>
+  <span style="font-size: 1em; color: Dodgerblue;">
+    <i class="fas fa-circle-notch fa-spin fa-2x fa-fw"></i>
+  </span>
+  <span style="font-size: 1em; color: MediumSlateBlue;">
+    <i class="fas fa-sync-alt fa-spin fa-2x fa-fw"></i>
+  </span>
+</div>
+
+<label id="theme-switch" class="switch">
+  <input id="theme-slider" type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+<div id="lorem" class="theme-container">
+  {% lorem 5 %}
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="#"> This WebSite</a>
+  </div>
+</footer>
+{% endblock %}

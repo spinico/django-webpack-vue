@@ -1,0 +1,81 @@
+// SPDX-License-Identifier: MIT
+
+// Gravity Animated Poster
+// A PEN BY Saransh Sinha
+// https://codepen.io/saransh/pen/EGqjo
+
+@function multiple-box-shadow ($n)
+  $value: "#{random(2000)}px #{random(2000)}px #FFF"
+  @for $i from 2 through $n
+    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF"
+
+  @return unquote($value)
+
+$shadows-small:  multiple-box-shadow(500)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big:    multiple-box-shadow(100)
+
+#stars1
+  width: 1px
+  height: 1px
+  box-shadow: $shadows-small
+  animation: animStar 100s linear infinite
+
+#stars2
+  width: 2px
+  height: 2px
+  box-shadow: $shadows-medium
+  animation: animStar 200s linear infinite
+
+#stars3
+  width: 3px
+  height: 3px
+  box-shadow: $shadows-big
+  animation: animStar 300s linear infinite
+
+#horizon
+  position: absolute
+  width: 100%
+  height: 20%
+  border-radius: 100% / 100%
+  z-index: -1
+  background: #038bff
+  -webkit-filter: blur(30px)
+  clip-path: polygon(0% -1000%, 0% 49%,100% 49%, 100% -1000%)
+  left: 0%
+  bottom: -10%
+
+  .glow
+    position: absolute
+    width: 100%
+    height: 130%
+    border-radius: 100% / 100%
+    z-index: -1
+    background: #215496
+    -webkit-filter: blur(200px)
+    opacity: 0.9
+
+#earth
+  position: absolute
+  width: 100%
+  height: 30%
+  clip-path: inset(0% 0% 48% 0%)
+  border-radius: 100% / 100%
+  z-index: -1
+  left: 0%
+  bottom: -16%
+  background: #090a0f
+
+  &:before
+    content: " "
+    position: absolute
+    width: 100%
+    height: 100%
+    border-radius: 100% / 100%
+    box-shadow: inset 0 0 15px 20px rgba(20, 50, 90, 0.5)
+
+@keyframes animStar
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(-2000px)
