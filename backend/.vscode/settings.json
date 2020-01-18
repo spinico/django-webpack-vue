@@ -1,0 +1,43 @@
+{
+  "python.venvPath": "${workspaceFolder}\\..",
+  "python.venvFolders": [".venv"],
+  "python.pythonPath": "${workspaceFolder}\\..\\.venv\\Scripts\\python.exe",
+  "files.associations": {
+    "*.html": "django-html"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    "build": true,
+    "**/__pycache__": true,
+    "**/*.js": { "when": "$(basename).ts"},
+    "**/*.js.map": true
+  },
+  "editor.rulers": [120],
+  "[git-commit]": {
+    "editor.rulers": [50]
+  },
+  "[python]": {
+    "editor.rulers": [80, 120]
+  },
+  "[django-html]": {
+    "editor.rulers": [120]
+  },
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#276679"
+  },
+  "editor.formatOnSave":  true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

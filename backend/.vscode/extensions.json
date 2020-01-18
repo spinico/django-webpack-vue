@@ -1,0 +1,75 @@
+{
+  "recommendations": [
+
+    ///////////////////////////
+    // Code formatter
+
+    // Prettier - Code formatter
+    // Code formatter using prettier
+    "esbenp.prettier-vscode",
+
+    // Formatting Toggle
+    // Toggle the formatter (Prettier, Beautify, ...) ON and OFF with a simple click.
+    "tombonnike.vscode-status-bar-format-toggle",
+
+    ///////////////////////////
+    // Debuggers
+
+    // Debugger for Chrome
+    // Debug your JavaScript code in the Chrome browser, or any other target that supports the Chrome Debugger protocol.
+    "msjsdiag.debugger-for-chrome",
+
+    ///////////////////////////
+    // Python
+
+    // Python
+    // Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.
+    "ms-python.python",
+
+    // Python Preview
+    // Provide Preview for Python Execution.
+    "dongli.python-preview",
+
+    ///////////////////////////
+    // Django
+
+    // Djaneiro - Django Snippets
+    // A collection of snippets for django templates, models, views, fields & forms. Ported from Djaneiro for SublimeText
+    "thebarkman.vscode-djaneiro",
+
+    //////////////////////////
+    // Utilities
+
+    // Auto Import
+    // Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX
+    "steoates.autoimport",
+
+    // Auto Close Tag
+    // Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text
+    "formulahendry.auto-close-tag",
+
+    // Auto Rename Tag
+    // Auto rename paired HTML/XML tag
+    "formulahendry.auto-rename-tag",
+
+    // Import Cost
+    // Display import/require package size in the editor
+    "wix.vscode-import-cost",
+
+    // npm
+    // Supports running npm scripts defined in the package.json file and validating the installed modules against the dependencies defined in the package.json.
+    "eg2.vscode-npm-script",
+
+    // npm Intellisense
+    // Autocompletes npm modules in import statements
+    "christian-kohler.npm-intellisense",
+
+    // Path Intellisense
+    // Autocompletes filenames
+    "christian-kohler.path-intellisense",
+
+    // EditorConfig for VS Code
+    // EditorConfig Support for Visual Studio Code
+    "editorconfig.editorconfig"
+  ]
+}

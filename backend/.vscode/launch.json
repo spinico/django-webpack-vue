@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Django: RunServer",
+      "type": "python",
+      "request": "launch",
+      "preLaunchTask": "Django: LiveReload",
+      "stopOnEntry": false,
+      "windows": {
+        "pythonPath": "${config:python.pythonPath}"
+      },
+      "django": true,
+      "console": "internalConsole", // Output in debug console
+      "program": "${workspaceRoot}/manage.py",
+      "args": [
+        "runserver_plus",
+        // Automatic reloading of Django apps is not possible while debugging. Python code changes made while the
+        // server is running will not take effect if the particular modules have already been loaded into memory.
+        "--noreload" // Automatic reloading of Django apps is not possible while debugging
+      ]
+    },
+    {
+      "name": "Chrome: Backend",
+      "type": "chrome",
+      "request": "launch",
+      "runtimeArgs": ["--disable-background-mode", "--disable-features=TranslateUI"],
+      "preLaunchTask": "Webpack: Watch",
+      //"url": "http://localhost:8000/${input:path}",
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceRoot}",
+      "userDataDir": "${workspaceRoot}/../.chrome",
+      "sourceMaps": true,
+      "smartStep": true,
+      "disableNetworkCache": true,
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["node_modules/**"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "path",
+      "type": "pickString",
+      "default": "",
+      "description": "Select the site path...",
+      "options": ["", "products", "documentation", "about"]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug",
+      "configurations": ["Chrome: Backend", "Django: RunServer"]
+    }
+  ]
+}

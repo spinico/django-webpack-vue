@@ -1,0 +1,229 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "Terminate All Tasks",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Debug: Terminate Tasks",
+      "command": "${input:Terminate All Tasks}"
+    },
+    {
+      "label": "Django: LiveReload",
+      "type": "shell",
+      "windows": {
+        "command": "${config:python.pythonPath}",
+        "args": [
+          "manage.py", "livereload",
+          "--ignore-file-extensions=.map,.css,.eot,.ttf,.woff,.woff2"
+        ]
+      },
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "development",
+        "clear": true
+      },
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3 
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "."
+          }
+        }
+      ]
+    },
+    {
+      "label": "Webpack: Watch",
+      "type": "shell",
+      "windows": {
+        "command": "npx",
+        "args": [
+          "webpack",
+          "--watch",
+          "--progress",
+          "--display=minimal",
+          "--mode=development"
+        ]
+      },
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "NODE_ENV": "development"
+        }
+      },
+      "presentation": {
+        "focus": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "development",
+        "clear": true
+      },
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3 
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "."
+          }
+        }
+      ]
+    },
+    {
+      "label": "Django: Migration",
+      "type": "shell",
+      "windows": {
+        "command": "CMD",
+        "args": ["/C", "${config:python.pythonPath}", "manage.py", "makemigrations",
+                 "^&^&", "${config:python.pythonPath}", "manage.py", "migrate", "--run-syncdb"]
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "presentation": {
+        "showReuseMessage": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "migration",
+        "clear": true,
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: Check",
+      "type": "shell",
+      "windows": {
+        "command": "${config:python.pythonPath}",
+        "args": ["manage.py", "check", "--settings", "settings.production", "--deploy"]
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "presentation": {
+        "showReuseMessage": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "validation",
+        "clear": true,
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Django: Test",
+      "type": "shell",
+      "windows": {
+        "command": "${config:python.pythonPath}",
+        "args": [
+          "manage.py", "test",
+          "--settings", "settings.development",
+          "--verbosity=2",
+          "--failfast"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "presentation": {
+        "showReuseMessage": false,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "validation",
+        "clear": true,
+        "focus": true
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true // Shortcut: CTRL+SHIFT+T
+      }
+    },
+    {
+      "label": "Django: CollectStatic",
+      "type": "shell",
+      "windows": {
+        "command": "${config:python.pythonPath}",
+        "args": [
+          "manage.py", "collectstatic", "--noinput", "--clear",
+          "--settings", "settings.production",
+          "--ignore", "admin/**",
+          "--ignore", "debug_toolbar/**",
+          "--ignore", "django_extensions/**"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      },
+      "presentation": {
+        "showReuseMessage": false,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "production",
+        "clear": true,
+        "focus": true
+      }
+    },
+    {
+      "label": "Webpack: Build",
+      "type": "shell",
+      "windows": {
+        "command": "npx",
+        "args": [
+          "webpack",
+          "--progress",
+          "--display=normal",
+          "--mode=production"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "NODE_ENV": "production"
+        }
+      },
+      "presentation": {
+        "showReuseMessage": false,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "production",
+        "clear": true
+      }
+    },
+    {
+      "label": "Deploy: Production",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Webpack: Build", "Django: CollectStatic"],
+      "group": {
+        "kind": "build",
+        "isDefault": true // Shortcut: CTRL+SHIFT+B
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{% spaceless %}
+{% load static %}
+
+<!doctype html>
+
+<html>
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>django-webpack-vue | {{ title }}</title>
+   <link href="{% static 'favicon.ico' %}" rel="icon" type="image/x-icon">
+   <link href="{% static 'styles/themes/theme-spacelab.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'styles/app.css' %}" rel="stylesheet" type="text/css">
+ </head>
+
+ <body>
+   <div class="header">{% block header %}{% endblock %}</div>
+   <div class="hero">{% block hero %}{% endblock %}</div>
+   <div class="content">{% block content %}{% endblock %}</div>
+   <div class="scroller">{% block scroller %}{% endblock %}</div>
+   <div class="footer">{% block footer %}{% endblock %}</div>
+
+   <script src="{% static 'vendors.js' %}"></script>
+   <script src="{% static 'app.js' %}"></script>
+ </body>
+</html>
+{% endspaceless %}
