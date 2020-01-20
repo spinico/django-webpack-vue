@@ -18,7 +18,6 @@ __pycache__
 /static
 /media
 /settings/*.key
-/temp
 
 # Editor configurations
 .vscode/chrome
