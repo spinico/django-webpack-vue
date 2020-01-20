@@ -173,7 +173,6 @@
         "args": [
           "manage.py", "collectstatic", "--noinput", "--clear",
           "--settings", "settings.production",
-          "--ignore", "admin/**",
           "--ignore", "debug_toolbar/**",
           "--ignore", "django_extensions/**"
         ]
